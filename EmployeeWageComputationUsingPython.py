@@ -3,8 +3,7 @@
 @Date: 2022-02-04 17:33:00
 @Last Modified by: Shital Bajait
 @Last Modified time: 2022-02-07 17:22:00
-@Title : Refactor code using function
->>>>>>> UC7-Refactor_write_function
+@Title : Store Daily Wage
 '''
 """
 Description:
@@ -42,6 +41,7 @@ def total():
             option = switcher.get(number)
             totalEmpHrs=totalEmpHrs+option()
             empWage=option()*EMP_RATE_PER_HOUR
+            print("Daily wage : ",empWage)
             totalEmpWage += empWage
     print("Total Employee Hours : ",totalEmpHrs)
     print("Total Employee Wage : ",totalEmpWage)
