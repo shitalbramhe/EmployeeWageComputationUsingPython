@@ -41,7 +41,7 @@ def total():
             option = switcher.get(number)
             totalEmpHrs=totalEmpHrs+option()
             empWage.append(option()*EMP_RATE_PER_HOUR)
-            print("Day :", totalWorkingDays+1 ,"Daily wage : ",empWage[totalWorkingDays])
+            print("Daily wage : ",empWage[totalWorkingDays])
             totalWorkingDays+=1
     print("Total Employee Hours : ",totalEmpHrs)
     print("Total Employee Wage : ",sum(empWage))
