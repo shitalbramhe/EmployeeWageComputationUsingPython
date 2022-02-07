@@ -10,7 +10,6 @@ import random
 
 EMP_RATE_PER_HOUR = 20 
 NUM_OF_WORKING_DAYS = 20
-empHrs = 0
 empWage = 0
 totalEmpWage=0
 totalEmpHrs = 0
@@ -34,9 +33,10 @@ while totalEmpHrs <= MAX_HRS_IN_MONTH and totalWorkingDays < NUM_OF_WORKING_DAYS
     }
     # Get the option from switcher dictionary
     option = switcher.get(number)
-
+    totalEmpHrs+=option()
     empWage=option()*EMP_RATE_PER_HOUR
     totalEmpWage += empWage
-    day+=1
+
 #print employee wage
+print("Total Employee Hours : ",totalEmpHrs)
 print("Total Employee Wage : ",totalEmpWage)
