@@ -18,30 +18,38 @@ def emp_hours():
         None
     '''
 
-EMP_RATE_PER_HOUR = 20 
-NUM_OF_WORKING_DAYS = 20
-empHrs = 0
-empWage = 0
-totalEmpWage=0
-totalEmpHrs = 0
-totalWorkingDays = 0
-day=0
-MAX_HRS_IN_MONTH = 100
+    EMP_RATE_PER_HOUR = 20 
+    NUM_OF_WORKING_DAYS = 20
+    empHrs = 0
+    empWage = 0
+    totalEmpWage=0
+    totalEmpHrs = 0
+    totalWorkingDays = 0
+    day=0
+    MAX_HRS_IN_MONTH = 100
+    while totalEmpHrs <= MAX_HRS_IN_MONTH and totalWorkingDays < NUM_OF_WORKING_DAYS:
+        totalWorkingDays+=1
+        number = random.randint(0,2)
+        def FullTime():
+            return 8
+        def PartTime():
+            return 4
+        def Absent():
+            return 0    
 
-while totalEmpHrs <= MAX_HRS_IN_MONTH and totalWorkingDays < NUM_OF_WORKING_DAYS:
-    totalWorkingDays+=1
-    num = random.randint(0,2)
-    if num == 0:
-        empHrs = 8
-    elif num == 1:
-        empHrs = 4
-    else:
-        empHrs = 0
-    
+    switcher = {
+        0: Absent,
+        1: FullTime,
+        2: PartTime,
+    }
+    # Get the option from switcher dictionary
+    option = switcher.get(number)
+
+    empWage=option()*EMP_RATE_PER_HOUR
+    totalEmpWage += empWage
     day+=1
-    totalEmpHrs+= empHrs 
-    print("Day#:",totalWorkingDays,"Employee Hours:",empHrs)
+#print employee wage
+    print("Total Employee Wage : ",totalEmpWage)
 
-totalEmpWage =totalEmpHrs* EMP_RATE_PER_HOUR
-print("Total Employee Wage : ",totalEmpWage)
-        
+if __name__=="__main__":
+    emp_hours()
