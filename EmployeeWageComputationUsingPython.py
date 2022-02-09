@@ -48,4 +48,5 @@ def total():
     for i in empWage.values():
            sum = sum + i
     print("Total Employee Wage : ",sum)
-total()
+if __name__ == '__main__':
+    total()
